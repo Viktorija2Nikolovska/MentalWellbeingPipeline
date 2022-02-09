@@ -32,6 +32,5 @@ jobs:
         image: viktorija23/mentalwellbeingrepo
         registry: docker.io
       
-        tags: viktorija23/mentalwellbeingrepo:latest
         
          
