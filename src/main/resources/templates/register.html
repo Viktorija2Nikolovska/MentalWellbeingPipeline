@@ -1,0 +1,78 @@
+
+<section xmlns:th="http://www.thymeleaf.org" class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+                <!--					<h2 class="heading-section">Login #08</h2>-->
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="login-wrap p-4 p-md-5">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-user-o"></span>
+                    </div>
+                    <h3 class="text-center mb-4">Register</h3>
+                    <form  method="post" action="register" class="login-form">
+                        <th:block th:if="${hasError}">
+                            <div class="flex-sb-m w-full p-b-30">
+                                <div>
+                                    <label class="txt1 text-danger" th:text="${errorMessage}">
+
+                                    </label>
+                                </div>
+                            </div>
+                        </th:block>
+                        <th:block th:if="${Success}">
+                            <div class="flex-sb-m w-full p-b-30">
+                                <div>
+                                    <label class="txt1 text-success" th:text="${successMessage}" style="color: green ">
+
+                                    </label>
+                                </div>
+                            </div>
+                        </th:block>
+                        <div class="form-group">
+                            <input type="text" class="form-control rounded-left" name="username" placeholder="Username" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control rounded-left" name="email" placeholder="Username" required>
+                        </div>
+                        <div class="form-group d-flex">
+                            <input type="password" class="form-control rounded-left"  name="password" placeholder="Password" required>
+                        </div>
+                        <div class="form-group d-flex">
+                            <input type="password" class="form-control rounded-left"  name="repeatedPassword" placeholder="Password" required>
+                        </div>
+                        <input type="hidden" name="role" value="ROLE_USER" id="ROLE_USER">
+                        <div class="form-group d-md-flex">
+                            <div class="w-50">
+                                <label class="checkbox-wrap checkbox-primary">Remember Me
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <!--								<div class="w-50 text-md-right">-->
+                            <!--									<a href="#">Forgot Password</a>-->
+                            <!--								</div>-->
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary rounded submit p-3 px-5">Register</button>
+<!--                            <button type="submit" class="btn btn-primary rounded submit p-3 px-5">-->
+<!--                                <a href="/login" style="color: white;font-size: 16px ">Already have an account ? Login Here</a>-->
+<!--                            </button>-->
+                        </div>
+<!--                        <div class="container-login100-form-btn" style="color: #4674b8; padding-top: 10px">-->
+<!--                            <button class="login100-form-btn">-->
+<!--                                <a href="/login" style="color: white;font-size: 16px ">Already have an account ? Login Here</a>-->
+
+<!--                            </button>-->
+<!--                        </div>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

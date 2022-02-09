@@ -1,0 +1,74 @@
+<section xmlns:th="http://www.thymeleaf.org">
+
+    <!-- Psychiatrists area start -->
+    <div class="courses-area section-padding40 fix">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center mb-55">
+                        <h1 class="uppercase font-weight-bold gj-font-size-16 display-4 mt-4">Psychiatrists</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4" th:if="${psychiatrists.size()>0}">
+<!--                <input id="id" type="hidden" name="id" th:value="(${psychiatrists} != null ? ${psychiatrists.getId()} : '')">-->
+
+                <div class="col-lg-4" th:each="psychiatrists:${psychiatrists}">
+                    <div class="properties properties2 mb-30 psychiatrist" >
+                        <div class="properties__card">
+                            <div class="properties__img overlay1">
+
+                                <img th:src="${psychiatrists.getImageSource()}" alt="image" name="image">
+                            </div>
+                            <div class="properties__caption align-center">
+                                <h3 th:text="${psychiatrists.getName()}+${psychiatrists.getSurname()} "></h3>
+
+
+                                <h5 th:text="${psychiatrists.getBio()}"></h5>
+
+                                <a th:href="@{'/psychiatrist-profile/{id}' (id=${psychiatrists.getId()})}" class="btn btn-lg btn-info add psychiatrists-description mt-3">
+
+
+                                    Read More
+                                </a>
+
+
+
+                                <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+                                    <form th:action="@{'/support/delete/{id}' (id=${psychiatrists.getId()})}" th:method="DELETE">
+                                        <button type="submit" class="btn-danger btn btn-dark delete mt-3">
+                                            <i class="fa fa-trash">Delete</i>
+                                        </button>
+                                    </form>
+                                </th:block>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-8">
+                        <div class="section-tittle text-center mt-40">
+                            <a href="/support/add-psychiatrists"  class="btn btn-lg btn-info mb-3">Add new psychiatrist</a>
+                        </div>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+    <!-- Companies area End -->
+    <div id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+</section>
+
+
+
+    

@@ -1,0 +1,31 @@
+version: "3"
+services:
+
+  mb-database:
+
+    image: "postgres"
+
+    container_name: "mb-database"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=WebProgramming
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - ./database:/var/lib/postgresql/data
+
+  mental-wellbeing-app:
+    build: .
+    image: 'spring-boot-mw'
+    ports:
+      - "9998:9998"
+    container_name: "mental-wellbeing-app"
+    environment:
+      - POSTGRESQL_HOST=mental-wellbeing-db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=WebProgramming
+      - POSTGRES_DB=postgres
+    depends_on:
+      - mb-database

@@ -1,0 +1,140 @@
+
+
+<section xmlns:th="http://www.thymeleaf.org">
+
+    <!-- Psychiatrists area start -->
+    <div class="courses-area section-padding40 fix">
+        <div class="container">
+
+
+
+                <div class="col-lg-12">
+                    <div class="properties properties2 mb-30 psychiatrist text-center" >
+                        <div class="properties__card">
+                            <div class="properties__img overlay1">
+
+                                <img th:src="${psychiatrists.getImageSource()}" alt="image" name="image">
+                            </div>
+                            <div class="properties__caption align-center">
+                                <h3  class="mt-4 font-weight-bold" th:text="${psychiatrists.getName()} +' '+ ${psychiatrists.getSurname()} "></h3>
+
+                            <br/>
+                                <h5 class="mt-4" th:text="${psychiatrists.getBio()}"></h5>
+                                <h5  class="mt-4" th:text=" 'Email ' +' ' + ${psychiatrists.getEmail()}"></h5>
+
+                                <h5 class="mt-4" th:text=" 'Experience' +' '+ ${psychiatrists.getExperience()} + ' '+'years'"></h5>
+
+                                <h5 class="mt-4" th:text=" 'Price for hour'+' '+ ${psychiatrists.getPrice()} + '$'"></h5>
+
+
+
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+        </div>
+    </div>
+    <!-- Companies area End -->
+    <div id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<section xmlns:th="http://www.thymeleaf.org"-->
+<!--         xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">-->
+<!--    <div class="container bootstrap snippets bootdey autoScroll">-->
+<!--        <div class="profile card">-->
+<!--            <div class="profile-body">-->
+<!--                <div class="profile-bio">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-md-5 text-center">-->
+<!--                            <img class="img-thumbnail md-margin-bottom-10"  th:src="${psychiatrists.getImageSource()}" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="col-md-7 text-center">-->
+<!--                            <div class="">-->
+
+<!--                                <h2 th:text="${psychiatrists.getName()}" ></h2>-->
+<!--                            </div>-->
+<!--                            <div class="">-->
+
+<!--                                <h2 th:text="${psychiatrists.getSurname()}" ></h2>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <h3 th:text="${psychiatrists.getBio()}"></h3>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <h3 th:text="${psychiatrists.getExperience()}"></h3>-->
+<!--                            </div>-->
+
+<!--                            <div class="">-->
+
+<!--                                <h2 th:text="${psychiatrists.getPrice()}" ></h2>-->
+<!--                            </div>-->
+<!--                            <div class="">-->
+
+<!--                                <h2 th:text="${psychiatrists.getEmail()}" ></h2>-->
+<!--                            </div>-->
+
+
+
+<!--                            <hr>-->
+
+
+
+<!--&lt;!&ndash;                            <th:block sec:authorize="hasRole('ROLE_USER')" th:if="${psychiatrists.getCompanyUsername() } == ${username}">&ndash;&gt;-->
+
+
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-12 text-right mt-5">-->
+<!--                                        <a th:href="@{'/psychiatrist-profile/edit/{id}' (id=${psychiatrists.getId()})}" class="btn btn-md btn-info psychiatrists-description float-right">Edit</a>-->
+
+
+<!--&lt;!&ndash;                                        <a  th:href="@{'/employees/{id}' (id=${company.getId()})}" class="btn btn-md float-right ml-3 btn-info">See employees</a>&ndash;&gt;-->
+
+<!--                                    </div>-->
+<!--                                </div>-->
+
+<!--&lt;!&ndash;                            </th:block>&ndash;&gt;-->
+<!--                        </div>-->
+
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+
+
+<!--        </div>-->
+<!--    </div>-->
+<!--    <br>-->
+
+<!--</section>-->

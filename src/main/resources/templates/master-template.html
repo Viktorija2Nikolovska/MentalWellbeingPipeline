@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      style="margin: 0; padding: 0;">
+<head>
+
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellbeing</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/headerStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.9.2/tailwind.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+</head>
+<body style="margin: 0; padding: 0;" class="overflow-x-hidden antialiased">
+
+
+
+<!-- PRE LOADER -->
+<!-- ? Preloader Start -->
+
+<section class="preloader" style="display: none">
+    <div class="spinner">
+
+        <span class="spinner-rotate border"></span>
+
+    </div>
+
+    </div>
+
+
+</section>
+
+<header th:replace="/fragments/header"></header>
+
+<section th:replace="${bodyContent}">
+
+</section>
+
+<footer th:replace="/fragments/footer"></footer>
+
+
+<!--JS -->
+
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+
+<script src="../js/main.min.js"></script>
+
+<script>
+    if (document.getElementById('nav-mobile-btn')) {
+        document.getElementById('nav-mobile-btn').addEventListener('click', function () {
+            if (this.classList.contains('close')) {
+                document.getElementById('nav').classList.add('hidden');
+                this.classList.remove('close');
+            } else {
+                document.getElementById('nav').classList.remove('hidden');
+                this.classList.add('close');
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

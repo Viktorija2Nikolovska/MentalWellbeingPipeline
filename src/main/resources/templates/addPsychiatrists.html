@@ -1,0 +1,78 @@
+<section xmlns:th="http://www.thymeleaf.org">
+    <div class="container bootstrap snippets bootdey autoScroll">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12">
+                    <form  action="/support/add" method="POST" th:object="${psychiatrists}" enctype="multipart/form-data" class="col-md-12">
+
+<!--                                            <input id="id" type="hidden" name="id" th:value="(${psychiatrists} != null ? ${company.getId()} : '')">-->
+
+                        <div class="form-group col-lg-6" >
+                            <label class="text-uppercase gj-font-size-16"> Psychiatrist Photo</label>
+                            <div runat="server">
+                                <input type="file" class="btn btn-primary text-uppercase form-control" name="image"
+                                       th:src="(${psychiatrists} != null ? ${psychiatrists.getImageSource()} : '')"
+                                       id="imgInp" style="width:50%">
+
+                                <img src="#" alt="image" id="blah" class="img-thumbnail md-margin-bottom-10" type="hidden">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-lg-6 ">
+                            <h2 class="col-lg-12">Psychiatrists Information</h2>
+
+                            <div class="form-group col-lg-12">
+                                <label for="name">Name</label>
+                                <input id="name" name="name" type="text" class="form-control validate-input">
+                                <!--                            th:value="(${company} != null ? ${company.getName()} : '')">-->
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="name">Surname</label>
+                                <input id="name" name="surname" type="text" class="form-control validate-input">
+                                <!--                            th:value="(${company} != null ? ${company.getName()} : '')">-->
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="name">Bio</label>
+                                <input id="name" name="bio" type="text" class="form-control validate-input">
+                                <!--                                   th:value="(${company} != null ? ${company.getDescription()} : '')"-->
+
+
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="name">Email</label>
+                                <input id="name" name="email" type="email" class="form-control validate-input">
+                                <!--                                   th:value="(${company} != null ? ${company.getMoto()} : '')">-->
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="name">Price for a meeting</label>
+                                <input id="name" name="price" type="number" class="form-control validate-input">
+                                <!--                                   th:value="(${company} != null ? ${company.getOwner()} : '')" >-->
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label for="name">Experience</label>
+                                <input id="name" name="experience" type="number" class="form-control validate-input">
+                                <!--                                   th:value="(${company} != null ? ${company.getEmployee_num()} : '')" >-->
+                            </div>
+
+                            <div class="form-group col-lg-6">
+
+                                <button type="submit" class="btn btn-primary btn-block text-uppercase mb-3" style="width:50%">Save </button>
+                                <a href="/support" type="reset" class="btn btn-primary" >Cancel</a>
+                            </div>
+
+
+
+                        </div>
+                    </form>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>

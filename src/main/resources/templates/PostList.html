@@ -1,0 +1,75 @@
+<section xmlns:th="http://www.thymeleaf.org">
+
+    <!-- Post area start -->
+    <div class="courses-area section-padding40 fix">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center mb-55">
+                        <h1 class="uppercase font-weight-bold gj-font-size-16 display-4 mt-4">Posts</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4" th:if="${posts.size()>0}">
+
+                <div class="col-lg-4" th:each="posts:${posts}">
+                    <div class="properties properties2 mb-30 psychiatrist" >
+                        <div class="properties__card">
+                            <div class="properties__img overlay1">
+
+                                <img th:src="${posts.getImageSource()}" alt="image" name="image">
+                            </div>
+                            <div class="properties__caption align-center">
+
+
+
+                                <h5 th:text="${posts.getTitle()}"></h5>
+                                <h5 th:text="${posts.getDescription()}"></h5>
+                                <h5 th:text="${posts.getUsername()}"></h5>
+
+                                <a th:href="@{'/post-profile/{id}' (id=${posts.getId()})}" class="btn btn-lg btn-info add posts-description mt-3">
+
+
+                                    Read More
+                                </a>
+
+
+
+
+                                    <form th:action="@{'/connect/delete/{id}' (id=${posts.getId()})}" th:method="DELETE">
+                                        <button type="submit" class="btn-danger btn btn-dark delete mt-3">
+                                            <i class="fa fa-trash">Delete</i>
+                                        </button>
+                                    </form>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-8">
+                        <div class="section-tittle text-center mt-40">
+                            <a href="/connect/add-post"  class="btn btn-lg btn-info mb-3">Add new post</a>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+    <!-- Posts area End -->
+    <div id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+</section>
+
+
+
+
