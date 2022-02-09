@@ -30,6 +30,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
         image: viktorija23/mentalwellbeingrepo
+        registry: docker.io
         context: .
         file: Dockerfile
         push: true
