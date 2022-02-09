@@ -29,8 +29,13 @@ jobs:
       name: Build and Push Docker Image
       uses: docker/build-push-action@v2
       with:
-        image: viktorija23/mentalwellbeingrepo
-        registry: docker.io
+        context: .
+        file: Dockerfile
+        push: true
+        tags: viktorija23/mentalwellbeingrepo:latest
+      
+#         image: viktorija23/mentalwellbeingrepo
+#         registry: docker.io
       
         
          
